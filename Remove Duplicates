@@ -1,0 +1,8 @@
+def remove_duplicates(arr):
+  # TODO: Write your code here
+  p1 , p2 = 1 , 1
+  for i in range(len(arr)-1):
+    if arr[p1] != arr[p1 - 1]:
+      p2 += 1
+    p1 += 1
+  return p2
