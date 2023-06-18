@@ -1,0 +1,11 @@
+def pair_with_targetsum(arr, target_sum):
+  # TODO: Write your code here
+  left,right = 0 , len(arr) - 1
+  while left < right:
+    t = arr[left] + arr[right]
+    if t < target_sum:
+      left += 1
+    if t > target_sum:
+      right -= 1
+    if t == target_sum:
+      return [left,right]
