@@ -1,0 +1,22 @@
+class Solution:
+  def searchTriplets(self, arr):
+    arr.sort()
+    result = []
+    for point in range(len(arr) -2):
+      left , right = point + 1 , len(arr) - 1
+      while left < right:
+        target = (-1) * arr[point]
+        total = arr[left] + arr[right]
+        if target == total:
+          t = [arr[point],arr[left],arr[right]]
+          t.sort()
+        if t not in result:
+          result.append(t)
+          left += 1
+          right -= 1
+        if total > target:
+          right -= 1
+        if total < target:
+          left += 1
+
+    return result
